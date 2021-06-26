@@ -14,7 +14,7 @@ export default class Tab extends React.Component{
 
         return(
             <div>
-                <h2 className={this.attribute}> {this.attribute}</h2> 
+                <button className={this.attribute}> {this.attribute}</button> 
             </div>
         )
     }
