@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_06_26_195844) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year_released"
-    t.text "plot"
+    t.string "query"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
