@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
     <Heading/>
-    <Tab attribute={"Search"}/>
-    <Tab attribute={"History"}/>
+    <Tab attribute={"Search"} section={<Form/>}/>
+    <Tab attribute={"History"} section = {<History/>}/>
     </div>
   );
 }
