@@ -22,9 +22,12 @@ export default class Form extends React.Component{
             input: event.target.value
                 })
     }
+
+
     render(){
         return(
             <div className="searchForm">
+                <h2> Search for a movie! </h2>
                 <form onSubmit={this.handleClick}>
                     <input type="text" className="movieSearch" onChange={this.handleChange} value={this.state.input}/>
                     <button type="submit" value="search!"/>
