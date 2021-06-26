@@ -10,8 +10,9 @@ export default class ContentContainer extends React.Component{
     }
 
     render(){
+        console.log(this.content)
         return(
-            <div></div>
+            <div className={this.content}></div>
         )
     }
 }
