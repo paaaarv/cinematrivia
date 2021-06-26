@@ -11,14 +11,7 @@ export default class Tab extends React.Component{
         this.section = props.section
     }
 
-    handleClick = (event) =>{
-        if(event.target.className == "Search"){
-            return <ContentContainer content={"search"}/>
-        }
-        else{
-            return <ContentContainer content={"history"}/>
-        }
-    }
+
     render(){
 
         return(
