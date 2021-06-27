@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Heading from './components/Heading.js'
+import History from './components/History.js'
+import Form from './components/Form.js'
+import ContentContainer from './components/ContentContainer.js'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.render((
+    <Router>
+        <div>
+            <Route path="/" component={Heading}/>
+            <Route exact path="/search" component={Form}/>
+            <Route exact path="/history" component={History}/>
+            <Route exact path="/trivia" component={ContentContainer}/>
+        </div>
+    </Router>
+),
   document.getElementById('root')
 );
 

@@ -7,8 +7,6 @@ export default class Tab extends React.Component{
 
     constructor(props){
         super(props);
-        this.attribute = props.attribute
-        this.section = props.section
     }
 
 
@@ -17,7 +15,7 @@ export default class Tab extends React.Component{
         return(
             <div>
             <div className="button">
-                <button onClick={this.handleClick} className={this.attribute}> {this.attribute}</button>
+                <button onClick={this.handleClick} className={this.props.attribute}> {this.props.attribute}</button>
             </div>
             </div>
         )
