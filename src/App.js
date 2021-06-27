@@ -11,6 +11,7 @@ function App() {
     <Heading/>
     <Tab attribute={"Search"} section={<Form/>}/>
     <Tab attribute={"History"} section = {<History/>}/>
+    <History/>
     <Form/>
     </div>
   );

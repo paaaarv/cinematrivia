@@ -13,7 +13,14 @@ export default class Form extends React.Component{
 
     handleClick = (event)=>{
         event.preventDefault();
-        debugger
+        fetch("http://localhost:3000/movies",{
+        method: "POST",
+        headers:  {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(event.target[0].value)
+    })
         console.log(event)
     }
 
