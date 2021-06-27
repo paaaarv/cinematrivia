@@ -21,7 +21,7 @@ export default class Form extends React.Component{
         },
         body: JSON.stringify(event.target[0].value)
     })
-        console.log(event)
+        debugger
     }
 
     handleChange = (event) =>{

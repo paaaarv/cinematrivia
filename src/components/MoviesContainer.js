@@ -7,9 +7,7 @@ export default class MoviesContainer extends React.Component{
         super(props)
     }
 
-    componentDidMount(){
-        debugger
-    }
+    
 
     render(){
         return(
