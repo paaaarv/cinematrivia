@@ -1,5 +1,8 @@
 require 'pry'
-
+require 'uri'
+require 'net/http'
+require 'openssl'
+require 'rest-client'
 class Movie < ApplicationRecord
     has_many :trivias
 
@@ -16,6 +19,5 @@ class Movie < ApplicationRecord
             trivia= Trivium.new(info: trivia['text'],movie_id: id )
             trivia.save
         end
-        binding.pry
     end
 end

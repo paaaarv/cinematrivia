@@ -18,14 +18,17 @@ class MoviesController < ApplicationController
         "Content-Type": "application/json"
             })
         data = JSON.parse response
-        @movie = Movie.create(title: title, year_released: data["results"][0]["year"], query: data["results"][0]["id"])
-        @movie.create_trivia(@movie.query,@movie.id)
+        movie = Movie.create(title: title, year_released: data["results"][0]["year"], query: data["results"][0]["id"])
+        movie.create_trivia(movie.query,movie.id)
     end
 
     def show
     end
 
     def index
+        movies= Movie.all
+        render json: MovieSerializer.new(movies)
+
     end
 
     private
