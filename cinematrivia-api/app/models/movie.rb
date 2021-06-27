@@ -13,7 +13,6 @@ class Movie < ApplicationRecord
         "accept": "application/json",
         "Content-Type": "application/json"
             })
-            binding.pry
         data = JSON.parse response
         data["spoilt"].map do |trivia|
             trivia= Trivium.new(info: trivia['text'],movie_id: id )

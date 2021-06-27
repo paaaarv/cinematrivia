@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import findMovie from '../actions/findMovie.js'
+import Movie from './Movie.js'
 
 
-
-export default class Form extends React.Component{
+class Form extends React.Component{
 
     constructor(props){
         super()
@@ -13,15 +15,7 @@ export default class Form extends React.Component{
 
     handleClick = (event)=>{
         event.preventDefault();
-        fetch("http://localhost:3000/movies",{
-        method: "POST",
-        headers:  {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(event.target[0].value)
-    })
-        debugger
+        this.props.findMovie(this.state.input)
     }
 
     handleChange = (event) =>{
@@ -43,8 +37,13 @@ export default class Form extends React.Component{
             </div>
         )
     }
-
-
-
-
 }
+
+function mapDispatchToProps(dispatch){
+  return { findMovie: (input) => dispatch(findMovie(input)) }
+}
+
+
+export default connect(
+    null,
+    mapDispatchToProps)(Form)
