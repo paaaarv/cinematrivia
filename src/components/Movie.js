@@ -8,7 +8,7 @@ export default class Movie extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="movie">
                 <h2> {this.props.title} </h2>
                 <p> {this.props.year_released}</p>
             </div>

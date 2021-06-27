@@ -1,10 +1,9 @@
 import React from 'react'
-import Movie from './Movie.js'
+import MoviesContainer from './MoviesContainer.js'
 export default class History extends React.Component{
 
     constructor(props){
         super(props)
-
         this.state = {
             movies:[]
         }
@@ -17,7 +16,6 @@ export default class History extends React.Component{
                 this.setState({
                     movies: [...this.state.movies,x]
                 })
-                debugger
             })
 
         })
@@ -26,6 +24,7 @@ export default class History extends React.Component{
     render(){
         return(
             <div className="historyContainer">
+                <MoviesContainer movies={this.state.movies}/>
             </div>
         )
     }
