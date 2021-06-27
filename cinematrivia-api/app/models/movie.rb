@@ -4,7 +4,7 @@ require 'net/http'
 require 'openssl'
 require 'rest-client'
 class Movie < ApplicationRecord
-    has_many :trivias
+    has_many :trivia
 
     def create_trivia(query, id)
         response = RestClient::Request.execute(method: :get, url: 'https://imdb8.p.rapidapi.com/title/get-trivia?tconst='+query[7..-1], headers:{

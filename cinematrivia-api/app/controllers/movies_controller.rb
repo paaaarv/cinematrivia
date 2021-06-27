@@ -20,8 +20,9 @@ class MoviesController < ApplicationController
         data = JSON.parse response
         movie = Movie.create(title: title, image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
         movie.create_trivia(movie.query,movie.id)
-
-        render json: MovieSerializer.new(movie)
+        options = {include:[:trivia]
+        }
+        render json: MovieSerializer.new(movie,options )
     end
 
     def show
