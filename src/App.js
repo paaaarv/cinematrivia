@@ -1,6 +1,5 @@
 
 import './App.css';
-import Tab from './components/Tab.js'
 import Heading from './components/Heading.js'
 import History from './components/History.js'
 import Form from './components/Form.js'

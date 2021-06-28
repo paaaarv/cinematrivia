@@ -1,6 +1,5 @@
 
 export default function findMovie(input){
-    debugger
     return(dispatch)=>{
         dispatch({type: "START_ADDING_MOVIES"});
         fetch("http://localhost:3000/movies",{

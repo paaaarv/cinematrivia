@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import getMovie from '../actions/getMovie.js'
 import Movie from './Movie.js'
+import Loading from './Loading.js'
 class ContentContainer extends React.Component{
 
 
@@ -23,7 +24,7 @@ class ContentContainer extends React.Component{
     render(){
         return(
             <div className={this.content}>
-                {this.props.loading? <div> LOading!</div>  : this.handleUpdate()}
+                {this.props.loading? <Loading/> : this.handleUpdate()}
 
             </div>
         )

@@ -6,7 +6,10 @@ export default function movieReducer(state={movies: [], loading: false}, action)
             return{...state, movies: [...state.movies], loading: true};
         case "ADD_MOVIE":
             let trivia= [];
-            action.movie.included.map(x=>trivia.push(x.id))
+            debugger
+            if (action.movie.included.length == true){
+                action.movie.included.map(x=>trivia.push(x.id))
+            }
             let newMovie = {
                 id: action.movie.data.id,
                 title: action.movie.data.attributes.title,

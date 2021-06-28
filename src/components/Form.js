@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import findMovie from '../actions/findMovie.js'
-import Movie from './Movie.js'
 
 
 class Form extends React.Component{
