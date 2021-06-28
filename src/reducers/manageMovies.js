@@ -1,9 +1,9 @@
 
 
-export default function movieReducer(state={movies: []}, action){
+export default function movieReducer(state={movies: [], loading: false}, action){
     switch(action.type){
         case "START_ADDING_MOVIES":
-            return{...state, movies: [...state.movies]}
+            return{...state, movies: [...state.movies], loading: true};
         case "ADD_MOVIE":
             let trivia= [];
             action.movie.included.map(x=>trivia.push(x.id))
@@ -15,8 +15,10 @@ export default function movieReducer(state={movies: []}, action){
                 year_released: action.movie.data.attributes.year_released,
                 trivia_ids: trivia
             }
-
-            return {...state, movies: state.movies.concat(newMovie)}
+            return {
+        ...state,
+        movies: [...state.movies, newMovie], loading: false
+    };
         default:
             return state;
     }

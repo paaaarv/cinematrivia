@@ -44,11 +44,8 @@ function mapDispatchToProps(dispatch){
   return { findMovie: (input) => dispatch(findMovie(input)) }
 }
 
-function mapStateToProps(state){
-  return {movies: state.movies}
-}
 
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps)(Form)
