@@ -17,12 +17,7 @@ class ContentContainer extends React.Component{
 
     handleUpdate(){
         const movie= this.props.movie[this.props.movie.length-1]
-        this.setState({
-            title: movie.title,
-            year_released: movie.year_released,
-            image: movie.image
-        })
-        debugger
+        return <Movie title={movie.title} year={movie.year_released} image={movie.image}/>
     }
 
     render(){
@@ -34,7 +29,6 @@ class ContentContainer extends React.Component{
         )
     }
 }
-
 
 
 function mapStateToProps(state){
