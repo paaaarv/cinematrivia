@@ -14,7 +14,7 @@ function App() {
               <Route path="/" component={Heading}/>
               <Route exact path="/search" component={Form}/>
               <Route exact path="/history" component={History}/>
-              <Route exact path="/trivia" component={ContentContainer}/>
+              <Route path='/movies' render={movie => <ContentContainer {...movie}/>}/>
           </div>
       </Router>
   );

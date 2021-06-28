@@ -16,6 +16,7 @@ class Form extends React.Component{
     handleClick = (event)=>{
         event.preventDefault();
         this.props.findMovie(this.state.input)
+        this.props.history.push(`/trivia/${this.state.input}`)
     }
 
     handleChange = (event) =>{
@@ -43,7 +44,11 @@ function mapDispatchToProps(dispatch){
   return { findMovie: (input) => dispatch(findMovie(input)) }
 }
 
+function mapStateToProps(state){
+  return {movies: state.movies}
+}
+
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps)(Form)

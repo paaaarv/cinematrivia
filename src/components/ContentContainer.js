@@ -1,18 +1,25 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-
-export default class ContentContainer extends React.Component{
+class ContentContainer extends React.Component{
 
 
     constructor(props){
         super(props);
-        this.content= props.content
     }
 
     render(){
-        console.log(this.content)
         return(
             <div className={this.content}></div>
         )
     }
 }
+
+
+function mapStateToProps(state){
+  return {movies: state.movies}
+}
+
+export default connect(
+    mapStateToProps,
+    null)(ContentContainer)
