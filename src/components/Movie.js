@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from './Image.js'
-export default class Movie extends React.Component{
+import { connect } from 'react-redux'
+import getTrivia from '../actions/getTrivia.js'
+import Loading from './Loading.js'
+class Movie extends React.Component{
 
     constructor(props){
         super(props)
@@ -8,9 +11,19 @@ export default class Movie extends React.Component{
     }
 
     handleClick(){
-        debugger
+        this.props.getTrivia(this.props.id);
+        while(this.props.loading == true){
+            return <Loading/>
+        }
+        this.showTrivia()
+
+
     }
 
+    showTrivia(){
+        debugger
+
+    }
     render(){
         return(
             <div className="movie">
@@ -24,3 +37,17 @@ export default class Movie extends React.Component{
 
 
 }
+function mapStateToProps(state){
+    return{
+        trivia: state.trivia.trivia,
+        loading: state.trivia.loading
+    }
+}
+
+ function mapDispatchToProps(dispatch){
+     return {getTrivia: (id) => dispatch(getTrivia(id))}
+ }
+
+
+
+ export default connect(mapStateToProps,mapDispatchToProps)(Movie)

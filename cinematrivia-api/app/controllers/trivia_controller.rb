@@ -1,3 +1,5 @@
+require 'pry'
+
 class TriviaController < ApplicationController
 
     def new
@@ -5,7 +7,8 @@ class TriviaController < ApplicationController
     end
 
     def index
-
+        trivia = Trivium.where(movie_id: params["movie_id"])
+        render json: TriviumSerializer.new(trivia)
     end
 
     private
