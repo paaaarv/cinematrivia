@@ -25,7 +25,7 @@ export default function movieReducer(state={movies: [], findMovie: [], loading: 
             return{...state, loading: true};
 
         case "GET_MOVIES":
-            state.movies = []; 
+            state.movies = [];
             const triviaArray = []
             for (let i=0; i<action.movie.data.length; i++){
                 if (action.movie.data[i].relationships.trivia.data.length > 0){
@@ -44,6 +44,19 @@ export default function movieReducer(state={movies: [], findMovie: [], loading: 
             return{
                 ...state,loading:false
             }
+         case "GET_MOVIE":
+            let movie = state.movies.filter(x=> x.title==action.payload)
+            debugger
+            let foundMovie = {
+                id: movie[0].id,
+                title: movie[0].title,
+                image: movie[0].image,
+                query: movie[0].query,
+                year_released: movie[0].year_released,
+                trivia_ids: movie[0].trivia_ids
+
+            }
+            return {...state, findMovie: foundMovie}
         default:
             return state;
     }

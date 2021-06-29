@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import getTrivia from '../actions/getTrivia.js'
+import getMovie from '../actions/getMovie.js'
 import Trivia from './Trivia.js'
 import Movie from './Movie.js'
 import Loading from './Loading.js'
@@ -20,13 +21,22 @@ class ContentContainer extends React.Component{
     }
 
     handleUpdate(){
-        const movie= this.props.movie[this.props.movie.length-1]
+        if(this.props.movie.length <1){
+            this.props.getMovie(this.props.match.params.movieId)
+            this.props.getTrivia(movie.id)
+            return (<div>
+                    <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
+                    {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
+                </div>
+        )
+        }else{
+            let movie= this.props.movie[this.props.movie.length-1]
         this.props.getTrivia(movie.id)
         return (<div>
                 <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
                 {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
             </div>
-    )
+    )}
     }
 
     render(){
@@ -49,7 +59,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
     return{
-        getTrivia: (id)=>{dispatch(getTrivia(id))}
+        getTrivia: (id)=>{dispatch(getTrivia(id))},
+        getMovie: (id) => {dispatch(getMovie(id))}
     }
 }
 

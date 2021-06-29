@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import getMovies from '../actions/getMovies.js'
 import Loading from './Loading.js'
 import Movie from './Movie.js'
+import{ NavLink } from 'react-router-dom'
 class MoviesContainer extends React.Component{
 
     constructor(props){
@@ -14,8 +15,16 @@ class MoviesContainer extends React.Component{
     }
 
     handleUpdate(){
-        return this.props.movies.map(movie=> <Movie id = {movie.id} key={movie.id} title={movie.title} image={movie.image} year = {movie.year_released}/>
-        )
+        return (this.props.movies.map(function(movie){
+                return(
+                    <div className="movieContainer">
+                        <Movie id = {movie.id} key={movie.id} title={movie.title} image={movie.image} year = {movie.year_released}/>
+                        //<NavLink to={`/trivia/${movie.title}`} props={movie}> Show Trivia </NavLink>
+
+                    </div>
+        )}
+    )
+    )
     }
 
 
