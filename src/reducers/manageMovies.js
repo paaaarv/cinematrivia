@@ -1,16 +1,16 @@
 
 
-export default function movieReducer(state={movies: [], loading: false}, action){
+export default function movieReducer(state={movies: [], findMovie: [], loading: false}, action){
     switch(action.type){
         case "START_ADDING_MOVIES":
-            return{...state, movies: [...state.movies], loading: true};
+            return{...state, loading: true};
         case "ADD_MOVIE":
             let trivia= [];
             debugger
             if (action.movie.included.length == true){
                 action.movie.included.map(x=>trivia.push(x.id))
             }
-            let newMovie = {
+            const newMovie = {
                 id: action.movie.data.id,
                 title: action.movie.data.attributes.title,
                 image: action.movie.data.attributes.image,
@@ -20,8 +20,30 @@ export default function movieReducer(state={movies: [], loading: false}, action)
             }
             return {
         ...state,
-        movies: [...state.movies, newMovie], loading: false
+        findMovie: [newMovie], loading: false
     };
+        case "START_GETTING_MOVIES":
+            return{...state, loading: true};
+            
+        case "GET_MOVIES":
+            const triviaArray = []
+            for (let i=0; i<action.movie.data.length; i++){
+                if (action.movie.data[i].relationships.trivia.data.length > 0){
+                    action.movie.data[i].relationships.trivia.data.map(x=>triviaArray.push(x.id))
+                }
+                const movieInstance= {
+                    id: action.movie.data[i].id,
+                    title: action.movie.data[i].attributes.title,
+                    image: action.movie.data[i].attributes.image,
+                    query: action.movie.data[i].attributes.query,
+                    year_released: action.movie.data[i].attributes.year_released,
+                    trivia_ids: triviaArray
+                }
+                state.movies.push(movieInstance)
+            }
+            return{
+                ...state,loading:false
+            }
         default:
             return state;
     }

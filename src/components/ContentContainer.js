@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import getMovie from '../actions/getMovie.js'
 import Movie from './Movie.js'
 import Loading from './Loading.js'
 class ContentContainer extends React.Component{
@@ -18,7 +17,7 @@ class ContentContainer extends React.Component{
 
     handleUpdate(){
         const movie= this.props.movie[this.props.movie.length-1]
-        return <Movie title={movie.title} year={movie.year_released} image={movie.image}/>
+        return <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
     }
 
     render(){
@@ -33,7 +32,7 @@ class ContentContainer extends React.Component{
 
 
 function mapStateToProps(state){
-  return {movie: state.movie.movies,
+  return {movie: state.movie.findMovie,
           loading: state.movie.loading
   }
 }
