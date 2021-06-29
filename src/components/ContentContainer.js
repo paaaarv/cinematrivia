@@ -21,7 +21,12 @@ class ContentContainer extends React.Component{
 
     handleUpdate(){
         const movie= this.props.movie[this.props.movie.length-1]
-        return <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
+        this.props.getTrivia(movie.id)
+        return (<div>
+                <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
+                {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
+            </div>
+    )
     }
 
     render(){
@@ -42,7 +47,12 @@ function mapStateToProps(state){
           triviaLoading: state.trivia.loading
   }
 }
+function mapDispatchToProps(dispatch){
+    return{
+        getTrivia: (id)=>{dispatch(getTrivia(id))}
+    }
+}
 
 export default connect(
     mapStateToProps,
-    null)(ContentContainer)
+    mapDispatchToProps)(ContentContainer)
