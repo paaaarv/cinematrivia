@@ -10,7 +10,8 @@ export default class Trivia extends React.Component{
 
     render(){
         return(
-            <div className="trivia"> 
+            <div className="trivia">
+                <p> {this.props.info}</p>
             </div>
         )
     }

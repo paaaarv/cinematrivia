@@ -1,7 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import getTrivia from '../actions/getTrivia.js'
+import Trivia from './Trivia.js'
 import Movie from './Movie.js'
 import Loading from './Loading.js'
+
+
 class ContentContainer extends React.Component{
 
 
@@ -33,7 +37,9 @@ class ContentContainer extends React.Component{
 
 function mapStateToProps(state){
   return {movie: state.movie.findMovie,
-          loading: state.movie.loading
+          loading: state.movie.loading,
+          trivia: state.trivia.trivia,
+          triviaLoading: state.trivia.loading
   }
 }
 

@@ -15,7 +15,6 @@ export default function triviaReducer(state={trivia:[], loading: true}, action){
             }
             state.trivia.push(triviaItem)
         }
-            debugger
             return{...state, loading:false}
 
 
