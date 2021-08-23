@@ -18,8 +18,16 @@ class MoviesController < ApplicationController
         "Content-Type": "application/json"
             })
         data = JSON.parse response
+        unless data["results"][0]["title"].include? title.titleize
+            data=nil
+            #return an error instead of making data nil
+        end
+        if Movie.check(title)
+            movie=Movie.check(title)
+        else
             movie = Movie.create(title: data["results"][0]["title"], image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
             movie.create_trivia(movie.query,movie.id)
+        end
             options = {include:[:trivia]
             }
             render json: MovieSerializer.new(movie,options)

@@ -19,6 +19,14 @@ class Movie < ApplicationRecord
                 trivia= Trivium.new(info: trivia['text'],movie_id: id )
                 trivia.save
         end
+    end
+    end
+
+    def self.check(name)
+        if self.find_by(title:name.titleize)
+            movie=self.find_by(title:name.titleize)
+        else
+            return nil
         end
     end
 end

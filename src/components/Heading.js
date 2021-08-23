@@ -13,8 +13,8 @@ export default class Heading extends React.Component{
                 <p> an app designed for you to look up trivia about your favorite movies!</p>
                 <br/>
                 <div>
-                    <NavLink to="/search" exact> Search </NavLink>
-                    <NavLink to="/history" exact> History </NavLink> 
+                    <NavLink className="navigation" to="/search" exact> Search </NavLink>
+                    <NavLink className="navigation" to="/history" exact> History </NavLink>
                 </div>
             </div>
         )

@@ -23,9 +23,9 @@ class ContentContainer extends React.Component{
     handleUpdate(){
         if(this.props.movie.length <1){
             this.props.getMovie(this.props.match.params.movieId)
-            this.props.getTrivia(movie.id)
+            this.props.getTrivia(this.props.movie.id)
             return (<div>
-                    <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
+                    <Movie key={this.props.movie.id} id= {this.props.movie.id} title={this.props.movie.title} year={this.props.movie.year_released} image={this.props.movie.image}/>
                     {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
                 </div>
         )
