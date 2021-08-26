@@ -22,11 +22,20 @@ class Movie < ApplicationRecord
     end
     end
 
-    def self.check(name)
-        if self.find_by(title:name.titleize)
+    def self.check(name, data)
+        if data["message"]=="q must be provided"
+            movie = nil
+            return movie
+        elsif self.find_by(title:name.titleize)
             movie=self.find_by(title:name.titleize)
+            return movie
+        elsif data["results"][0]["title"] == name.titleize
+            movie = Movie.create(title: data["results"][0]["title"], image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
+            return movie
         else
-            return nil
+            binding.pry
+            movie=nil
+            return movie
         end
     end
 end

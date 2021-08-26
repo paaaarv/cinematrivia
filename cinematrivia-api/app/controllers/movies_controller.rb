@@ -18,19 +18,13 @@ class MoviesController < ApplicationController
         "Content-Type": "application/json"
             })
         data = JSON.parse response
-        unless data["results"][0]["title"].include? title.titleize
-            data=nil
-            #return an error instead of making data nil
-        end
-        if Movie.check(title)
-            movie=Movie.check(title)
-        else
-            movie = Movie.create(title: data["results"][0]["title"], image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
-            movie.create_trivia(movie.query,movie.id)
-        end
-            options = {include:[:trivia]
-            }
-            render json: MovieSerializer.new(movie,options)
+        #if title is more than one word, must turn into array, for loop
+        #maybe in model method to check? whether it exists in DB or in my DB already
+        movie = Movie.check(title, data)
+                options = {include:[:trivia]
+                }
+                render json: MovieSerializer.new(movie,options)
+        #end
     end
 
     def show
