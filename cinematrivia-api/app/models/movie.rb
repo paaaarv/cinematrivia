@@ -29,7 +29,7 @@ class Movie < ApplicationRecord
         elsif self.find_by(title:name.titleize)
             movie=self.find_by(title:name.titleize)
             return movie
-        elsif data["results"][0]["title"] == name.titleize
+        elsif data["results"][0]["title"].gsub(/[^a-zA-Z\s\d]/, '') == name.titleize.gsub(/[^a-zA-Z\s\d]/, '')
             movie = Movie.create(title: data["results"][0]["title"], image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
             return movie
         else

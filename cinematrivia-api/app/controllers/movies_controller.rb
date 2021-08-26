@@ -21,6 +21,7 @@ class MoviesController < ApplicationController
         #if title is more than one word, must turn into array, for loop
         #maybe in model method to check? whether it exists in DB or in my DB already
         movie = Movie.check(title, data)
+        binding.pry
                 options = {include:[:trivia]
                 }
                 render json: MovieSerializer.new(movie,options)
