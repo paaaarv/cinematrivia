@@ -5,7 +5,7 @@ import getMovie from '../actions/getMovie.js'
 import Trivia from './Trivia.js'
 import Movie from './Movie.js'
 import Loading from './Loading.js'
-
+import Error from './Error.js'
 
 class ContentContainer extends React.Component{
 
@@ -22,17 +22,19 @@ class ContentContainer extends React.Component{
 
     handleUpdate(){
         if(this.props.movie.length <1){
-            this.props.getMovie(this.props.match.params.movieId)
-            this.props.getTrivia(this.props.movie.id)
-            return (<div>
-                    <Movie key={this.props.movie.id} id= {this.props.movie.id} title={this.props.movie.title} year={this.props.movie.year_released} image={this.props.movie.image}/>
-                    {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
-                </div>
-        )
+            return <Error/>
+            ///this.props.getMovie(this.props.match.params.movieId)
+            ///this.props.getTrivia(this.props.movie.id)
+            ///return (<div>
+            ///        <Movie key={this.props.movie.id} id= {this.props.movie.id} title={this.props.movie.title} year={this.props.movie.year_released} image={this.props.movie.image}/>
+        ///            {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
+        ///        </div>
+        ///)
         }else{
-            let movie= this.props.movie[this.props.movie.length-1]
-        this.props.getTrivia(movie.id)
-        return (<div>
+
+            let movie= this.props.movie[0]
+            this.props.getTrivia(movie.id)
+            return (<div>
                 <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
                 {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
             </div>

@@ -11,7 +11,7 @@ export default function findMovie(input){
         body: JSON.stringify(input)
     }).then(response => response.json()).then(movie =>{
         if(movie.data == null){
-        console.log(movie.data)
+        dispatch({type: "SHOW_ERROR", movie})
         }
         else{
             dispatch({ type: 'ADD_MOVIE', movie })

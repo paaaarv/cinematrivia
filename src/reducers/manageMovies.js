@@ -3,7 +3,7 @@
 export default function movieReducer(state={movies: [], findMovie: [], loading: false}, action){
     switch(action.type){
         case "START_ADDING_MOVIES":
-            return{...state, loading: true};
+            return{...state, findMovie:[], loading: true};
         case "ADD_MOVIE":
             let trivia= [];
          if (action.movie.included.length == true){
@@ -21,6 +21,8 @@ export default function movieReducer(state={movies: [], findMovie: [], loading: 
         ...state,
         findMovie: [newMovie], loading: false
     };
+        case "SHOW_ERROR":
+            return{...state,loading:false}
         case "START_GETTING_MOVIES":
             return{...state, loading: true};
 
