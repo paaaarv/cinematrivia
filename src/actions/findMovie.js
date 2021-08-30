@@ -9,6 +9,13 @@ export default function findMovie(input){
           "Accept": "application/json"
         },
         body: JSON.stringify(input)
-    }).then(response => response.json()).then(movie => dispatch({ type: 'ADD_MOVIE', movie }))
+    }).then(response => response.json()).then(movie =>{
+        if(movie.data == null){
+        console.log(movie.data)
+        }
+        else{
+            dispatch({ type: 'ADD_MOVIE', movie })
+    }
+})
 }
     }
