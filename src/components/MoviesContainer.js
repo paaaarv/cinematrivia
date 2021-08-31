@@ -19,8 +19,6 @@ class MoviesContainer extends React.Component{
                 return(
                     <div className="movieContainer">
                         <Movie id = {movie.id} key={movie.id} title={movie.title} image={movie.image} year = {movie.year_released}/>
-                        //<NavLink to={`/trivia/${movie.title}`} props={movie}> Show Trivia </NavLink>
-
                     </div>
         )}
     )
