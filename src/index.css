@@ -32,17 +32,28 @@ code {
     padding: auto;
 }
 .movieImage{
-    margin:auto;
-    padding-top: 40px;
+    margin-top: 50px;
+    width: 200px;
+    height: auto;
+    border: 4px solid black;
+    margin-left: 20%;
 }
+
 .movieContainer{
     display:inline-block;
     text-align: center;
     margin: 15px;
 
 }
+
+.singleMovie{
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
 .historyContainer{
-    
+
     text-align: center;
 }
 
@@ -55,14 +66,18 @@ p{
 .movie h2{
     font-family: 'Bebas Neue', cursive;
     font-size: 3vw;
+    text-align: center;
 }
 .trivia{
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
     text-align: center;
 }
-h1{
-
+h3{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2vw;
+    text-align: center;
+    padding-top: 30px;
 }
 .navigation{
     font-family: 'Open Sans Condensed', sans-serif;

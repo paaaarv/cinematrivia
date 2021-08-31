@@ -34,7 +34,7 @@ class ContentContainer extends React.Component{
 
             let movie= this.props.movie[0]
             this.props.getTrivia(movie.id)
-            return (<div>
+            return (<div className="singleMovie">
                 <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
                 {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
             </div>

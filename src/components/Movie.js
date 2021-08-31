@@ -10,7 +10,8 @@ export default class Movie extends React.Component{
     render(){
         return(
             <div className="movie">
-                <Image image={this.props.image}/>
+                <Image style={{display: 'block',
+    margin: '0 auto'}} image={this.props.image}/>
                 <h2> {this.props.title} </h2>
                 <p> {this.props.year}</p>
             </div>

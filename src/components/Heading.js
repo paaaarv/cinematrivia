@@ -1,6 +1,5 @@
 import React from 'react';
 import{ NavLink } from 'react-router-dom';
-import image from '../assets/film-strip.png'
 export default class Heading extends React.Component{
     constructor(){
         super();
