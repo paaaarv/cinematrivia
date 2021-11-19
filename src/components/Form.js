@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import findMovie from '../actions/findMovie.js'
 
-
 class Form extends React.Component{
 
     constructor(props){
@@ -11,20 +10,16 @@ class Form extends React.Component{
             input: ""
         }
     }
-
     handleClick = (event)=>{
         event.preventDefault();
         this.props.findMovie(this.state.input)
         this.props.history.push(`/trivia/${this.state.input}`)
     }
-
-    handleChange = (event) =>{
+    handleChange=(event)=>{
         this.setState({
             input: event.target.value
                 })
     }
-
-
     render(){
         return(
             <div className="searchForm">
@@ -38,13 +33,9 @@ class Form extends React.Component{
         )
     }
 }
-
 function mapDispatchToProps(dispatch){
   return { findMovie: (input) => dispatch(findMovie(input)) }
 }
-
-
-
 export default connect(
     null,
     mapDispatchToProps)(Form)

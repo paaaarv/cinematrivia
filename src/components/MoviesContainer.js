@@ -20,15 +20,15 @@ class MoviesContainer extends React.Component{
                     <div className="movieContainer">
                         <Movie id = {movie.id} key={movie.id} title={movie.title} image={movie.image} year = {movie.year_released}/>
                     </div>
-        )}
-    )
-    )
+                )}
+            )
+        )
     }
 
 
     render(){
         return(
-            <div className="moviesContainer">{this.props.loading? <Loading/> : this.handleUpdate() }</div>
+            <div className="moviesContainer">{this.props.loading? <Loading/> : this.handleUpdate }</div>
         )
     }
 }

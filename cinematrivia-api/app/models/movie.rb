@@ -30,7 +30,6 @@ class Movie < ApplicationRecord
             movie=self.find_by(title:name.titleize)
             return movie
         elsif data["results"][0]["title"] == name.titleize
-            binding.pry
             movie = Movie.create(title: data["results"][0]["title"], image: data["results"][0]["image"]["url"], year_released: data["results"][0]["year"], query: data["results"][0]["id"])
             movie.create_trivia(movie.id,movie.query)
             return movie

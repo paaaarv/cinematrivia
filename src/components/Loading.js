@@ -1,4 +1,5 @@
 import React from 'react'
+import Loader from 'react-loader-spinner';
 
 export default class Loading extends React.Component{
     constructor(props){
@@ -6,8 +7,9 @@ export default class Loading extends React.Component{
     }
     render(){
         return(
-            <div>
-                <h2> Finding your movie in the database! </h2>
+            <div class="loading">
+                <Loader
+type="Oval"  color="#00BFFF" height={150} width={150}                     />
             </div>
         )
     }
