@@ -29,6 +29,7 @@ export default function movieReducer(state={movies: [], findMovie: [], loading: 
         case "GET_MOVIES":
             state.movies = [];
             const triviaArray = []
+            debugger
             for (let i=0; i<action.movie.data.length; i++){
                 if (action.movie.data[i].relationships.trivia.data.length > 0){
                     action.movie.data[i].relationships.trivia.data.map(x=>triviaArray.push(x.id))

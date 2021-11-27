@@ -22,9 +22,8 @@ class Form extends React.Component{
     }
     render(){
         return(
-            <div className="searchForm">
-
-                <form onSubmit={this.handleClick}>
+            <div className="formDiv">
+                <form className="form" onSubmit={this.handleClick}>
                     <input type="text" className="movieSearch" onChange={this.handleChange} value={this.state.input}/>
                     <button id="button-addon2" type="submit"> search </button>
 

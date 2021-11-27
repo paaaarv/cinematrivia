@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Barlow+Condensed:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Raleway:wght@500&family=Special+Elite&display=swap');
 @import url("react-loader-spinner/dist/loader/css/react-spinner-loader.css");
 
 
@@ -8,6 +9,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 70%;
+  border: 1px solid white;
+  margin: 10% auto;
+  background-image:url("images/hotel-wallpaper-black.png");
 }
 
 code {
@@ -15,22 +20,61 @@ code {
     monospace;
 }
 
+.app{
+    background-color:#657E96;
+    padding: 30px;
+}
+
 .heading{
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Special Elite', cursive;
     text-align: center;
-    font-size: 2vw;
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-
-
+    font-size: 1.8vw;
+    color: #323E4A;
 }
 .box{
-    margin-top: 20px;
-    border: 2px solid black;
-    width: 600px;
+    width: 80%;
     margin: auto;
-    padding: auto;
+}
+.navigation{
+    font-family: 'Raleway', sans-serif;
+    padding: 10px 50px;
+    margin: 3px;
+    font-size:18px;
+    border: 1px solid #98BFE3;
+    text-decoration: none;
+    color: #98BFE3;
+    background-color: #323E4A;
+}
+.navDiv{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.formDiv{
+    padding-top: 50px;
+    margin: 30px;
+    text-align: center;
+}
+
+input[type="text"]{
+    background: white;
+    border:none;
+    padding-right: 20px;
+    border: 5px solid black;
+    border-radius: 50px;
+    padding: 20px;
+    width: 30%;
+    margin: auto;
+}
+
+button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    color:#98BFE3;
+    background-color: #323E4A;
+    border: 2px solid  #98BFE3;
+    padding: 10px 20px;
+    margin-left: 5px;
 }
 .movieImage{
     margin-top: 50px;
@@ -55,8 +99,6 @@ code {
     width: 50%;
     margin: auto;
     text-align: center;
-
-
 }
 
 
@@ -82,37 +124,7 @@ h2, h3{
     text-align: center;
     padding-top: 30px;
 }
-.navigation{
-    font-family: 'Open Sans Condensed', sans-serif;
-    padding: 10px 50px;
-    margin: 3px;
-    font-size:20px;
-    border: 1px solid white;
-    color: white;
-    background-color: black;
-
-
-}
-
-.navDiv{
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-}
-.searchForm{
-    padding-top: 50px;
-    margin: 30px;
-    text-align: center;
-
-}
 .loading{
     text-align:center;
     margin-top: 50px;
-}
-
-button{
-    font-family: 'Open Sans Condensed', sans-serif;
-    background-color: black;
- color: white;
- border: 2px solid #4CAF50
 }

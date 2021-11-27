@@ -20,8 +20,7 @@ class ContentContainer extends React.Component{
         }
     }
 
-    handleUpdate(){
-        debugger
+    handleUpdate=()=>{
         if(this.props.movie.length <1){
             return <Error/>
             ///this.props.getMovie(this.props.match.params.movieId)

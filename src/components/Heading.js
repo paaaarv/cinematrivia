@@ -11,7 +11,6 @@ export default class Heading extends React.Component{
             <div className="heading">
                 <div className="box">
                 <h1> Cinema Trivia </h1>
-                <p> an app designed for you to look up trivia about your favorite movies!</p>
                 </div>
                 <br/>
             </div>

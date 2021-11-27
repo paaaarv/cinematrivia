@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 function App() {
   return (
       <Router>
-          <div>
+          <div class="app">
               <Route path="/" component={Heading}/>
               <Route exact path="/search" component={Form}/>
               <Route exact path="/history" component={History}/>

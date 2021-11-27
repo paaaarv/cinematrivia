@@ -9,13 +9,11 @@ class MoviesContainer extends React.Component{
     constructor(props){
         super(props)
     }
-
     componentDidMount(){
         this.props.getMovies()
     }
-
     handleUpdate(){
-        return (this.props.movies.map(function(movie){
+         (this.props.movies.map(function(movie){
                 return(
                     <div className="movieContainer">
                         <Movie id = {movie.id} key={movie.id} title={movie.title} image={movie.image} year = {movie.year_released}/>
@@ -28,7 +26,7 @@ class MoviesContainer extends React.Component{
 
     render(){
         return(
-            <div className="moviesContainer">{this.props.loading? <Loading/> : this.handleUpdate }</div>
+            <div className="moviesContainer">{this.props.loading? <Loading/> : null }</div>
         )
     }
 }
