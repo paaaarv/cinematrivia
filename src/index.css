@@ -82,11 +82,12 @@ button{
 }
 .movieImage{
     object-fit: cover;
-    width: 100px;
+    width: 200px;
    height: auto;
     border: 4px solid black;
-    margin: 100px auto;
+    margin: auto;
     display: flex;
+    float:left;
 }
 
 .movieContainer{
@@ -96,28 +97,27 @@ button{
 
 }
 .movie{
-    width: 30%;
+    width: 80%;
+    text-align: center;
 }
 
 .singleMovie{
     width: 80%;
     margin: auto;
-    margin-top: 50px;
-    text-align: center;
+    margin-top: 30px;
 }
 
-
 p{
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 20px
-    ;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     text-align:center;
 }
 .movie h2{
-    font-family: 'Bebas Neue', cursive;
+    padding-top: 0;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3vw;
-    text-align: center;
     display:inline;
+    margin: 10px;
 }
 .trivia{
     font-family: 'Open Sans Condensed', sans-serif;

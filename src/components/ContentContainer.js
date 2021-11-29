@@ -2,11 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import getTrivia from '../actions/getTrivia.js'
 import getMovie from '../actions/getMovie.js'
-import Trivia from './Trivia.js'
 import Movie from './Movie.js'
 import Loading from './Loading.js'
 import Error from './Error.js'
-
+import TriviaCarousel from './triviaCarousel.js'
 class ContentContainer extends React.Component{
 
 
@@ -36,7 +35,8 @@ class ContentContainer extends React.Component{
             this.props.getTrivia(movie.id)
             return (<div className="singleMovie">
                 <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
-                {this.props.triviaLoading? null : this.props.trivia.map(trivium => <Trivia key={trivium.id} info={trivium.info}/>)}
+                {this.props.triviaLoading? null : <TriviaCarousel trivia={this.props.trivia}/>}
+
             </div>
     )}
     }
