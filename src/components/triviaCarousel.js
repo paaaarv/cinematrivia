@@ -5,18 +5,11 @@ import Trivia from './Trivia.js'
 export default class TriviaCarousel extends React.Component{
     constructor(props){
         super(props);
-
-        this.handleTrivia=this.handleTrivia.bind(this)
+        this.state={
+            count: 0
+        }
     }
 
-
-
- handleTrivia(){
-        console.log(this.props.trivia)
-        //this.props.trivia.map(t=>{
-             //<Trivia info={t}/>
-        //})
-    }
 
     render(){
         return(

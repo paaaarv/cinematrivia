@@ -30,15 +30,15 @@ class ContentContainer extends React.Component{
         ///        </div>
         ///)
         }else{
-
             let movie= this.props.movie[0]
             this.props.getTrivia(movie.id)
-            return (<div className="singleMovie">
-                <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image}/>
-                {this.props.triviaLoading? null : <TriviaCarousel trivia={this.props.trivia}/>}
-
-            </div>
-    )}
+            if(this.props.triviaLoading == false){
+            return (
+                <div className="singleMovie">
+                <Movie key={movie.id} id= {movie.id} title={movie.title} year={movie.year_released} image={movie.image} trivia={this.props.trivia}/>
+                </div>
+            );
+        }}
     }
 
     render(){

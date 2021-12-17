@@ -1,4 +1,4 @@
-
+import React from 'react'
 import './App.css';
 import Heading from './components/Heading.js'
 import History from './components/History.js'
