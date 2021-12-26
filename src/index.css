@@ -15,10 +15,6 @@ body {
   background-image:url("images/pink-dust.png");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .app{
     background-color:#657E96;
