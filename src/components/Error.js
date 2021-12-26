@@ -1,10 +1,6 @@
 import React from 'react'
-import Form from './Form.js'
 
 export default class Error extends React.Component{
-
-
-
     render(){
         return(
             <div>
