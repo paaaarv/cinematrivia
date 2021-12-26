@@ -14,6 +14,7 @@ export default class TriviaCarousel extends React.Component{
     render(){
         return(
             <div class='triviaCarousel'>
+            {this.props.trivia}
             </div>
         )
     }
