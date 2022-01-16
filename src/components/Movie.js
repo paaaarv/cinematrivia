@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from './Image.js'
-import TriviaCarousel from './triviaCarousel.js'
+import TriviaCarousel from './TriviaCarousel.js'
 export default class Movie extends React.Component{
 
     constructor(props){
