@@ -15,7 +15,6 @@ class ContentContainer extends React.Component{
             title: "",
             year_released: "",
             image: "",
-
         }
     }
 
@@ -45,7 +44,6 @@ class ContentContainer extends React.Component{
         return(
             <div className={this.content}>
                 {this.props.loading? <Loading/> : this.handleUpdate()}
-
             </div>
         )
     }
