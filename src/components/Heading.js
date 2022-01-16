@@ -11,11 +11,11 @@ export default class Heading extends React.Component{
             <div className="heading">
                 <div className="box">
                 <h1> Cinema Trivia </h1>
+                <p> an app to find trivia on your favorite movies! </p> 
                 </div>
                 <br/>
             </div>
                 <div className="navDiv">
-
                     <NavLink className="navigation" to="/search" exact> Search </NavLink>
                     <NavLink className="navigation" to="/history" exact> History </NavLink>
                 </div>
