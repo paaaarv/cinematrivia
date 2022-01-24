@@ -22,16 +22,12 @@ class MoviesContainer extends React.Component{
             )
         )
     }
-
-
     render(){
         return(
             <div className="moviesContainer">{this.props.loading? <Loading/> : null }</div>
         )
     }
 }
-
-
 function mapDispatchToProps(dispatch){
   return { getMovies: () => dispatch(getMovies()) }
 }
