@@ -8,7 +8,6 @@ export default function findMovie(input){
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(input)
     }).then(response => response.json()).then(movie =>{
         if(movie.data == null){
         dispatch({type: "SHOW_ERROR", movie})
