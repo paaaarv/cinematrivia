@@ -1,7 +1,4 @@
- require 'pry'
-require 'uri'
-require 'net/http'
-require 'openssl'
+require 'pry'
 require 'rest-client'
 class Movie < ApplicationRecord
     has_many :trivia
